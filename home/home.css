@@ -1,0 +1,329 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #0a0a1a;
+  color: #e0e0e0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Canvas Background */
+#star-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at top, #0d0d2b, #000);
+}
+
+/* Heading */
+#myh1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: #00fff7;
+  text-shadow: 0 0 15px #00fff7, 0 0 30px #0077ff;
+  margin: 20px 0;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00fff7;
+  }
+  to {
+    text-shadow: 0 0 25px #00fff7, 0 0 40px #0077ff;
+  }
+}
+
+/* Navigation */
+#navigations {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: left;
+  padding-left: 30px;
+  gap: 25px;
+  
+}
+
+#navigations a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#navigations a:hover {
+  color: #00fff7;
+  text-shadow: 0 0 8px #00fff7;
+  font-size: 1.3rem;
+}
+
+/* Logo */
+#nkslogo {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0, 255, 247, 0.6);
+  margin: 20px auto;
+  display: block;
+}
+
+/* Sections */
+section {
+  margin: 40px 0;
+  padding: 20px;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: #00fff7;
+  text-shadow: 0 0 10px #00fff7;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #d1d1d1;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Calendar Box */
+.calendar-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 0 20px rgba(0, 255, 247, 0.3);
+}
+
+.calendar-box img {
+  max-width: 350px;
+  border-radius: 10px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #00fff7;
+  color: #000;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #0077ff;
+  color: #fff;
+  box-shadow: 0 0 15px #00fff7;
+}
+
+/* Achievements */
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 255, 247, 0.3);
+}
+
+.achievement-card h3 {
+  color: #ff6f61;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  margin: 30px 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+footer a {
+  color: #00fff7;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+#facebook{
+  color: #0d5eba;
+  font-weight: bold;
+}
+#insta{
+  color: rgb(213, 91, 222);
+  font-weight: bold;
+}
+/* -------------------------------------------
+   Responsive enhancements
+------------------------------------------- */
+
+/* Tablet and small laptop */
+@media (max-width: 768px) {
+  #myh1 {
+    font-size: 2.25rem;
+    margin: 16px 0 28px;
+  }
+
+  #navigations {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 12px 16px;
+    padding-left: 16px;
+  }
+
+  /* Avoid layout jump on hover for touch devices */
+  #navigations a {
+    font-size: 1rem;
+  }
+  #navigations a:hover {
+    font-size: 1rem;
+  }
+
+  #nkslogo {
+    width: 140px;
+    height: 140px;
+    margin: 16px auto;
+    box-shadow: 0 0 22px rgba(0, 255, 247, 0.45);
+  }
+
+  section {
+    margin: 28px 0;
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    padding: 0 12px;
+  }
+
+  .calendar-box {
+    padding: 16px;
+  }
+
+  .calendar-box img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .achievements-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  .achievement-card {
+    padding: 16px;
+  }
+
+  .achievement-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  body {
+    text-align: left;
+  }
+
+  #myh1 {
+    font-size: 1.85rem;
+    text-align: center;
+    margin: 14px 0 24px;
+  }
+
+  #navigations {
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 12px;
+    gap: 12px;
+  }
+
+  #navigations a {
+    font-size: 0.98rem;
+  }
+  #navigations a:hover {
+    font-size: 0.98rem;
+  }
+
+  #nkslogo {
+    width: 120px;
+    height: 120px;
+    margin: 14px auto;
+    box-shadow: 0 0 18px rgba(0, 255, 247, 0.38);
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 0 10px;
+  }
+
+  .calendar-box {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .achievement-card h3 {
+    font-size: 1.2rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #myh1 {
+    animation: none;
+  }
+}

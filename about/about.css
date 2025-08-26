@@ -1,0 +1,398 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(/images/background\ 1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  font-family: 'Poppins', sans-serif;
+  color: #e0e0e0;
+  line-height: 1.6;
+  background-attachment: fixed;
+}
+
+#gyansutra {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.3rem;
+  position: relative;
+  transition: color 0.3s;
+
+}
+
+#gyansutra::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #f5d76e;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
+
+}
+#gyansutra:hover::after {
+  width: 100%;
+}
+
+#gyansutra:hover {
+  color: #f5d76e;
+  animation-name: glow;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+
+/* Navigation Bar */
+#navigations {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: left;
+  gap: 30px;
+  border-bottom: 2px solid #f5d76e;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+@keyframes glow{
+  from{text-shadow: none;}
+  to{text-shadow: 0px 0px 5px rgb(47, 239, 239),0px 0px 15px rgb(47, 239, 239) ;}
+}
+
+#navigations a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.3rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+#navigations a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #f5d76e;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s;
+}
+
+#navigations a:hover::after {
+  width: 100%;
+}
+
+#navigations a:hover {
+  color: #f5d76e;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Gradient Text with Fallback */
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: inline-block;
+  margin: 0;
+
+  /* Fallback solid color */
+  color: #ffffff;
+
+  /* Gradient for clipping */
+  background-image: linear-gradient(90deg, #f5d76e, #ffaf40);
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  /* Clip background to text */
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@supports (-webkit-background-clip: text) {
+  .hero h1 {
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@supports (background-clip: text) {
+  .hero h1 {
+    color: transparent;
+  }
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Main Content Container */
+.content {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Card Style Sections */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Typography */
+.h2s{
+  font-family: 'Playfair Display', serif;
+  color: #f5d76e;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+h3 {
+  color: #ffaf40;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+ul {
+  margin: 10px 0 0 20px;
+  font-size: 1.1rem;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+blockquote {
+  font-style: italic;
+  color: #fff;
+  border-left: 3px solid #f5d76e;
+  padding-left: 15px;
+  margin-top: 15px;
+}
+
+/* Animations */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.2s forwards;
+  animation-play-state: paused;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  #navigations {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+
+/* ----------------------------------------------------
+   Responsive Enhancements (tablet and phone)
+   Additions below keep layout clean on small devices
+---------------------------------------------------- */
+
+/* Tablet and small laptop */
+@media (max-width: 1024px) {
+  .content {
+    margin: 32px auto;
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 72px 18px;
+  }
+
+  .hero h1 {
+    letter-spacing: 2px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  /* Background fixed can cause jank on mobile; relax it on smaller screens */
+  body {
+    background-attachment: scroll;
+  }
+
+  #navigations {
+    padding: 12px 16px;
+    gap: 16px;
+  }
+
+  #navigations a {
+    font-size: 1.1rem;
+    padding: 6px 4px; /* bigger tap target */
+  }
+
+  .hero {
+    padding: 56px 16px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+  .content {
+    margin: 28px auto;
+    padding: 0 14px;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+  }
+
+  p, ul {
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  .card {
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  }
+
+  blockquote {
+    padding-left: 12px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  /* Make top nav easy to scroll horizontally if links overflow */
+  #navigations {
+    gap: 12px;
+    padding: 10px 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  #navigations::-webkit-scrollbar { display: none; } /* WebKit */
+
+  #navigations a {
+    font-size: 1.05rem;
+    padding: 8px 6px; /* minimum comfortable tap area */
+  }
+
+  .hero {
+    padding: 48px 14px;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hero p {
+    font-size: 0.98rem;
+    margin-top: 8px;
+  }
+
+  .content {
+    margin: 24px auto;
+    padding: 0 12px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  p, ul {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  li { margin-bottom: 6px; }
+
+  .card {
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 3px 16px rgba(0,0,0,0.35);
+  }
+
+  blockquote {
+    border-left-width: 2px;
+    padding-left: 10px;
+  }
+}
+
+/* Disable hover lifts on touch devices to avoid accidental jumps */
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.4);
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #gyansutra {
+    animation: none !important;
+  }
+  .fade-in {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
