@@ -1,5 +1,5 @@
 body {
-    background-image: url(/images/backevent.png);
+    background-image: url(../images/backevent.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: scroll;
@@ -134,4 +134,5 @@ blockquote {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
