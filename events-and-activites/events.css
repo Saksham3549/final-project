@@ -136,3 +136,52 @@ blockquote {
     }
 
 }
+/* Container for star images */
+.starimages {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+#highlights{
+    font-family: 'Playfair Display', serif;
+    color: #f5d76e;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+
+}
+/* Individual card */
+.image-card {
+    width: 280px;   /* make all cards equal width */
+    height: 200px;  /* fixed height for uniform grid */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image inside card */
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* ensures proper fitting */
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+}
+
+
+/* Hover animation */
+.image-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.image-card:hover img {
+    transform: scale(1.1);
+}
+
