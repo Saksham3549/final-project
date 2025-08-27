@@ -5,52 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nakshatra-Gallery</title>
-
-    <!-- Correct relative CSS (same folder) -->
     <link rel="stylesheet" href="gallery.css">
-
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;600&display=swap"
         rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
-    <!-- Navigation -->
     <div id="navigations">
-        <!-- Go up one folder (..) to reach project root -->
-        <span><a href="../index.html">Home</a></span>
-        <span><a href="../about/about.html">About us</a></span>
-        <span><a href="../events-and-activites/events.html">Events & Activities</a></span>
-        <span><a href="gallery.html">Gallery</a></span>
-        <span><a href="https://drive.google.com/file/d/1T7yUPR_guOlleKXYbIkKbR-gHbeOoRhI/view" target="_blank">Gyansutra📖</a></span>
+        <span><a href="/index.html" target="_blank"> Home</a></span>
+        <span><a href="/about/about.html" target="_blank"> About us</a></span>
+        <span><a href="/events-and-activites/events.html" target="_blank"> Events & Activities</a></span>
+        <span><a href="gallery.html" target="_blank"> Gallery</a></span>
+        <span><a href="https://drive.google.com/file/d/1T7yUPR_guOlleKXYbIkKbR-gHbeOoRhI/view"
+                target="_blank">Gyansutra 📖</a></span>
     </div>
-
     <!-- Falling Stars Canvas -->
     <canvas id="star-canvas"></canvas>
-
-    <!-- Heading -->
-    <h1 id="myh1">Gallery 📸</h1>
-
-    <div class="sliders-container">
-        <!-- Slider 1 -->
-        <div class="slider">
-            <a class="slider1" href="../images/img1.jpg"><img src="../images/img1.jpg" alt="img1"></a>
-            <a class="slider1" href="../images/img2.jpg"><img src="../images/img2.jpg" alt="img2"></a>
-            <a class="slider1" href="../images/img3.jpg"><img src="../images/img3.jpg" alt="img3"></a>
-            <a class="slider1" href="../images/img4.jpg"><img src="../images/img4.jpg" alt="img4"></a>
-        </div>
-
-        <!-- Slider 2 -->
-        <div class="slider">
-            <a class="slider2" href="../images/newimage1.jpg"><img src="../images/newimage1.jpg" alt="newimg1"></a>
-            <a class="slider2" href="../images/newimage2.jpg"><img src="../images/newimage2.jpg" alt="newimg2"></a>
-            <a class="slider2" href="../images/newimage4.jpg"><img src="../images/newimage4.jpg" alt="newimg4"></a>
-            <a class="slider2" href="../images/newimage5.jpg"><img src="../images/newimage5.jpg" alt="newimg5"></a>
-        </div>
     </div>
+    <!-- header of images  -->
 
-    <!-- Correct relative JS (same folder) -->
+    <section>
+        <h1 class="h1s">Gallery📸✨</h1>
+    </section>
+     <section class="cards">
+            <div class="images">
+                <div><a href="nasa/img2.jpg"><img class="image-card" src="nasa/img2.jpg" alt="img1"></a></div>
+                <div><a href="nasa/img3.jpg"><img class="image-card" src="nasa/img3.jpg" alt="img1"></a></div>
+                <div><a href="nasa/img4.jpg"><img class="image-card" src="nasa/img4.jpg" alt="img1"></a></div>
+                <div><a href="nasa/img5.jpg"><img class="image-card" src="nasa/img5.jpg" alt="img1"></a></div>
+                <div><a href="nasa/newimage4.jpg"><img class="image-card" src="nasa/newimage4.jpg" alt="img1"></a></div>
+            </div>
+
+        </section>
+
     <script src="gallery.js"></script>
 </body>
+
 </html>
