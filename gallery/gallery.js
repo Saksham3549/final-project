@@ -1,72 +1,8 @@
 // img background code
 
 
-
-// image slider code
-
-const slides1 = document.querySelectorAll(".slider1");
-const slides2 = document.querySelectorAll(".slider2");
-let slider1index = 0;
-let slider2index = 0;
-let timer = null;
-
-initalise();
-
-
-function initalise() {
-  if (slides1.length > 0 && slides2.length >0) {
-    slides1[slider1index].classList.add("displayclass");
-    slides2[slider2index].classList.add("displayclass");
-    timer = setInterval(nextslide, 3000);
-
-
-  }
-
-
-}
-function showslide(index) {
-
-  if (index > slides1.length - 1) {
-    slider1index = 0;
-
-  }
-  else if (index < 0) {
-    slider1index = slides1.length - 1;
-  }
-
-  if (index > slides2.length - 1) {
-    slider2index = 0;
-
-  }
-  else if (index < 0) {
-    slider2index = slides2.length - 1;
-  }
-
-  slides1.forEach(slide => {
-    slide.classList.remove("displayclass");
-  })
-
-  slides1[slider1index].classList.add("displayclass");
-
-  slides2.forEach(slide => {
-    slide.classList.remove("displayclass");
-
-  })
-
-  slides2[slider2index].classList.add("displayclass");
-
-
-
-}
-
-function nextslide() {
-  slider1index++;
-  slider2index++;
-  showslide(slider1index);
-  showslide(slider2index);
-}
 // star falling
-// js for home page
+// js for gallery page
 
 const canvas = document.getElementById("star-canvas");
 const ctx = canvas.getContext("2d");
