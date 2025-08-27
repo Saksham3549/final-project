@@ -175,11 +175,17 @@ footer a {
 
 #facebook{
   color: #0d5eba;
+  background-color: white;
+  border-radius: 100px;
   font-weight: bold;
+  font-size: 25px;
 }
 #insta{
-  color: rgb(213, 91, 222);
+  color: #ec05ca;
+  background-color: white;
   font-weight: bold;
+  font-size: 25px;
+  border-radius: 100px;
 }
 /* -------------------------------------------
    Responsive enhancements
@@ -326,4 +332,5 @@ footer a {
   #myh1 {
     animation: none;
   }
+
 }
