@@ -1,12 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* heading */
-#myh1 {
+/* heading */
+.h1s {
   text-align: center;
   font-size: 3rem;
-  margin: 20px 0;
-  margin-bottom: 50px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Roboto', sans-serif; 
+  font-weight: 700;
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00fff7;
+  }
+  to {
+    text-shadow: 0 0 25px #00fff7, 0 0 40px #0077ff;
+  }
 }
 /* body*/
 /* General Reset */
@@ -43,12 +52,12 @@ body {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
   left: 0;
   right: 0%;
-
-  
+  font-size: 1.25rem;
   gap: 30px;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
 }
 
 #navigations a {
@@ -64,49 +73,128 @@ body {
 }
 
 #navigations a:hover {
-  color: #f5d76e;
+  color: #1cdcf6;
+  font-size: 1.35rem;
+  text-decoration: underline;
+  animation: glow 2s infinite alternate;
 }
 
-/* container to hold both sliders side by side */
-.sliders-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  margin-top: 30px;
-  flex-wrap: wrap; /* ✅ responsive: stacks vertically on small screens */
+.cards {
+    background: rgba(201, 46, 46, 0.05);
+    padding: 25px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.slider {
-  width: 350px;
-  height: 350px;
-  border: 3px solid black;
-  text-align: center;
+.cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
-.slider1 img,
-.slider2 img {
-  display: none; /* hide all images by default */
+/* Container for star images */
+.images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 24px;
-  border: 3px solid rgb(10, 53, 65);
-  box-shadow: 0px 4px 10px rgba(35, 6, 6, 0.2);
-  background-color: #e0f7fa;
 
+/* Individual card with blurred transparent background */
+.image-card {
+    width: 280px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+
+    /* Frosted glass effect */
+    background: rgba(247, 244, 244, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.displayclass img {
-  display: block; /* show only active image */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 24px;
-  border: 3px solid rgb(10, 53, 65);
-  box-shadow: 0px 4px 10px rgba(35, 6, 6, 0.2);
-  background-color: #e0f7fa;
+/* Image inside card */
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* ensures full fit */
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+}
+
+/* Hover animation */
+.image-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(208, 228, 227, 0.8);
+}
+
+.image-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .h1s {
+    font-size: 2.5rem;
+  }
+
+  .image-card {
+    width: 220px;
+    height: 160px;
+  }
+
+  #navigations {
+    font-size: 1.1rem;
+    gap: 20px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .h1s {
+    font-size: 2rem;
+  }
+
+  #navigations {
+    padding: 10px;
+    gap: 10px;
+    font-size: 1rem;
+  }
+
+  .image-card {
+    width: 90%;   /* full width inside screen */
+    max-width: 320px;
+    height: 180px;
+  }
+
+  .images {
+    gap: 15px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 480px) {
+  .h1s {
+    font-size: 1.6rem;
+  }
+
+  .image-card {
+    width: 95%;
+    height: 160px;
+  }
+
+  #navigations {
+    font-size: 0.9rem;
+  }
 }
