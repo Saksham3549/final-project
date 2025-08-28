@@ -187,10 +187,6 @@ footer a {
   font-size: 25px;
   border-radius: 100px;
 }
-/* -------------------------------------------
-   Responsive enhancements
-------------------------------------------- */
-
 /* Tablet and small laptop */
 @media (max-width: 768px) {
   #myh1 {
@@ -334,3 +330,4 @@ footer a {
   }
 
 }
+
